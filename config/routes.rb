@@ -1,10 +1,26 @@
 OneGlassIsNotEnough::Application.routes.draw do
+  get "page/contact"
+  get "page/help"
+  get "page/terms"
+  get "page/privacy"
+  resources :wines
+
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get "/wine" => 'wines#index'
+  get "/home" => 'home#index'
+
+  get "/contact" => 'page#contact'
+  get "/help" => 'page#help'
+  get "/privacy" => 'page#privacy'
+  get "/terms" => 'page#terms'
+  get "/about" => 'page#about'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
