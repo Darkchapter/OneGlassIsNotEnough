@@ -10,6 +10,9 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+# Use bcrypt for secure passwords
+gem 'bcrypt-ruby', '~>3.0.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

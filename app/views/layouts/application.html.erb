@@ -20,6 +20,9 @@
 	            <li><a href="/about">About</a></li>
 	        </ul>
 	    </nav>
+	      <% flash.each do |key, value| %>
+	        <div class="alert alert-<%= key %>"><%= value %></div>
+	      <% end %>
 		<%= yield %>
 
 		<!--BEGIN FOOTER-->
