@@ -19,7 +19,14 @@
 	            <li><a href="">Add-Ons</a></li>
 	            <li><a href="/about">About</a></li>
 	        </ul>
-	    </nav>
+	        <ul class="nav navbar-nav navbar-right">
+	            <% if signed_in? %>
+	               	<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+          		<% else %>
+           			<li><%= link_to "Sign in", signin_path %></li>
+          		<% end %>
+        	</ul>	    
+        </nav>
 	      <% flash.each do |key, value| %>
 	        <div class="alert alert-<%= key %>"><%= value %></div>
 	      <% end %>
@@ -34,6 +41,7 @@
 		            <li><a href="/terms">Terms and Conditions</a></li>
 		            <li><a href="/privacy">Privacy Policy</a></li>
 	        	</ul>
+				
 			</nav>	
 		</div>
 		<!--END FOOTER-->

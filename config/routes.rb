@@ -1,6 +1,7 @@
 OneGlassIsNotEnough::Application.routes.draw do
   resources :wines
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   get "users/new"
   get "page/contact"
@@ -21,8 +22,10 @@ OneGlassIsNotEnough::Application.routes.draw do
   get "/privacy" => 'page#privacy'
   get "/terms" => 'page#terms'
   get "/about" => 'page#about'
+  
   match '/signup',  to: 'users#new',  via: 'get'
-
+  match '/signin',  to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
