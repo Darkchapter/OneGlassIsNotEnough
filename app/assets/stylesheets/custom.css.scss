@@ -1,5 +1,56 @@
 @import "bootstrap";
 
+
+body{
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #f3f3f3 !important;
+}
+
+.container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color:white;
+}
+
+/* logo */
+a.navbar-brand:link, 
+a.navbar-brand:visited, 
+a.navbar-brand:active, 
+a.navbar-brand:hover{
+  color: white;
+}
+
+/* navbar links */
+.navbar-inverse .navbar-nav > li > a:link,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:active,
+.navbar-inverse .navbar-nav > li > a:visited{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+}
+
+/* steps description*/
+#steps{
+  font-size: 11pt;
+}
+
+/* steps number */
+.label-default{
+  font-size: 40pt;
+  background-color: black;
+  border-radius: 5px 20px 5px;
+  float: left;
+  margin-right: 20px;
+}
+
+h2{
+  display: inline;
+}
+
+
 /* miscellaneous */
 @mixin box_sizing {
   -moz-box-sizing: border-box;

@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @wine.name %>
-</p>
+      <div class="row">
+        <div class="col-lg-12" style="padding-bottom: 20px;">
+          <%= link_to '<< Back to wines', wines_path, class: "btn btn-default btn-sm" %>
+        </div>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @wine.description %>
-</p>
-
-<p>
-  <strong>Photo url:</strong>
-  <%= @wine.photo_url %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @wine.rating %>
-</p>
-
-<%= link_to 'Edit', edit_wine_path(@wine) %> |
-<%= link_to 'Back', wines_path %>
+      <div class="row">
+        <div id="photo" class="col-lg-4">
+          <img class="featurette-image img-responsive" src="http://farm6.staticflickr.com/5022/5621588455_9ee607d245.jpg" alt="Generic placeholder image">
+        </div>
+        <div id="info" class="col-lg-8">
+          <p id="notice"><%= notice %></p>
+          <h3><%= @wine.name %></h3><br/>
+          <strong>Rating:</strong>
+          <%= @wine.rating %>/5<br/>
+          <strong>Photo url:</strong>
+          <%= @wine.photo_url %><br/>
+          <strong>Description:</strong>
+          <%= @wine.description %><br/><br/>
+          <%= link_to 'Edit wine info', edit_wine_path(@wine), class: "btn btn-default btn-sm" %>
+          <%= link_to 'Add to cart', edit_wine_path(@wine), class: "btn btn-default btn-sm" %>
+        </div>
+      </div>

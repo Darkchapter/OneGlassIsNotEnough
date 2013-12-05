@@ -22,10 +22,33 @@ OneGlassIsNotEnough::Application.routes.draw do
   get "/privacy" => 'page#privacy'
   get "/terms" => 'page#terms'
   get "/about" => 'page#about'
-  
+  get "/resources" => 'page#resources'
+  get "/survey" => 'page#survey'
+  get "/survey1" => 'page#survey1'
+  get "/survey2" => 'page#survey2'
+  get "/survey3" => 'page#survey3'
+  get "/survey4" => 'page#survey4'
+  get "/survey5" => 'page#survey5'
+  get "/add" => 'page#add'
+  get "/recipes" => 'page#recipes'
+  get "/recipes1" => 'page#recipes1'
+  get "/recipes2" => 'page#recipes2'
+  get "/recipes3" => 'page#recipes3'
+  get "/recipes4" => 'page#recipes4'
+  get "/recipes5" => 'page#recipes5'
+  get "/recipes6" => 'page#recipes6'
+  get "/recipes7" => 'page#recipes7'
+  get "/recipes8" => 'page#recipes8'
+  get "/facts" => 'page#facts'
+  get "/jargon" => 'page#jargon'
+  get "/newsletter" => 'page#newsletter'
+
+
+
   match '/signup',  to: 'users#new',  via: 'get'
   match '/signin',  to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
