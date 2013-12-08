@@ -1,4 +1,5 @@
 OneGlassIsNotEnough::Application.routes.draw do
+  get "brands/new"
   resources :wines
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -16,6 +17,7 @@ OneGlassIsNotEnough::Application.routes.draw do
   root 'home#index'
 
   get "/wine" => 'wines#index'
+  get "/brands" => 'brands#index'
   get "/home" => 'home#index'
   get "/contact" => 'page#contact'
   get "/help" => 'page#help'
