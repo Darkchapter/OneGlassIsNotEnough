@@ -15,15 +15,19 @@
 	        <ul class="nav navbar-nav">
 	            <li><a href="/wine">Wine</a></li>
 	            <li><a href="">Brands</a></li>
-	            <li><a href="">Community</a></li>
 	            <li><a href="/add">Add-Ons</a></li>
 	            <li><a href="/about">About</a></li>
 	        </ul>
 	        <ul class="nav navbar-nav navbar-right">
 	            <% if signed_in? %>
-	               	<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+	               	<li><%= link_to "Community", users_path %></li>
+		            <li id="fat-menu" class="dropdown">
+	                <li><%= link_to "Profile", current_user %></li>
+	                <li><%= link_to "Settings",  edit_user_path(current_user) %></li>
+	                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
           		<% else %>
            			<li><%= link_to "Sign in", signin_path %></li>
+           			<li><%= link_to "Sign Up", signup_path %></li>
           		<% end %>
         	</ul>	    
         </nav>
@@ -31,7 +35,6 @@
 	        <div class="alert alert-<%= key %>"><%= value %></div>
 	      <% end %>
 		<%= yield %>
-
 		<!--BEGIN FOOTER-->
 			<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 				<ul class="nav navbar-nav">
@@ -40,9 +43,7 @@
 		            <li><a href="/terms">Terms and Conditions</a></li>
 		            <li><a href="/privacy">Privacy Policy</a></li>
 		            <li><a href="/resources">Resources</a></li>
-
 	        	</ul>
-				
 			</nav>	
 		<!--END FOOTER-->
 	</div>

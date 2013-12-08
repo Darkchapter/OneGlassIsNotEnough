@@ -1,0 +1,11 @@
+<% provide(:title, 'All users') %>
+<h1>Community</h1>
+
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
