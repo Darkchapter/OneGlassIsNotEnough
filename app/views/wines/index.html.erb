@@ -1,19 +1,16 @@
-
-      <h2>Wine selection</h2><div class="row" style="float:right;"><%= link_to 'Create new wine', new_wine_path, class: "btn btn-default btn-sm" %></div>
-      <hr>
-      <div class="row">
-          <% @wines.each do |wine| %>
-            <div class="col-lg-3" style="padding-top: 30px;">
-              <img class="img-circle" src="http://farm6.staticflickr.com/5022/5621588455_9ee607d245_q.jpg" alt="Generic placeholder image">
-              <h3><%= wine.name %></h3>
-              <p><b>Rating: </b><%= wine.rating %>/5<br/>
-                <b>Description: </b><%= wine.description %><br/>
-                <%= wine.photo_url %><br/>
-              </p>
-              <p><%= link_to 'View details', wine , class: "btn btn-default btn-sm"%>
-                <%= link_to 'Edit', edit_wine_path(wine), class: "btn btn-default btn-sm"%>
-                <%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-sm"%>
-              </p>
-          <% end %>
-        </div>
-
+<h2>Wine selection</h2><div class="row" style="float:right;"><%= link_to 'Create new wine', new_wine_path, class: "btn btn-default btn-sm" %></div>
+<hr>
+<div class="marketing">
+  <% @wines.each do |wine| %>
+    <div class="col-md-3" style="padding-top: 30px;">
+      <img class="img-circle" src=<%= wine.photo_url %> style="height:140px; width: 140px;" alt="Generic placeholder image">
+      <h3><%= wine.name %></h3>
+      <p><b>Rating: </b><%= wine.rating %>/5<br/>
+        <b>Description: </b><%= wine.description %><br/>
+      </p>
+      <p><%= link_to 'View details', wine , class: "btn btn-default btn-sm"%>
+        <%= link_to 'Edit', edit_wine_path(wine), class: "btn btn-default btn-sm"%>
+      </p>
+    </div>
+  <% end %>
+</div>

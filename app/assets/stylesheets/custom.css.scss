@@ -8,9 +8,9 @@ body{
 }
 
 .container{
-  padding-top: 20px;
+  padding-top: 50px;
   padding-bottom: 20px;
-  padding-right: 30px;
+ padding-right: 30px;
   padding-left: 30px;
   background-color:white;
 }
@@ -147,5 +147,59 @@ input {
     &:last-child {
       border-bottom: 1px solid;
     }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid black;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: list-item;
+
+}
+.timestamp {
+  color: black;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
 }

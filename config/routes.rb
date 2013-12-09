@@ -3,6 +3,7 @@ OneGlassIsNotEnough::Application.routes.draw do
   resources :wines
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
 
   get "users/new"
   get "page/contact"
@@ -15,6 +16,8 @@ OneGlassIsNotEnough::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get "/post" => 'users#post'
 
   get "/wine" => 'wines#index'
   get "/brands" => 'brands#index'
