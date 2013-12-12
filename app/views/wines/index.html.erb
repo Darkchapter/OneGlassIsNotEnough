@@ -2,7 +2,7 @@
 <!--<%= link_to 'Create new wine', new_wine_path, class: "btn btn-default btn-sm" %></div>-->
 <hr>
 <div class="marketing">
-  <% i = 0 %>
+  <% i = 1 %>
   <% @wines.each do |wine| %>
     <% if i%4 == 0 %>
       <div class = "row">
@@ -15,11 +15,11 @@
         <b>Description: </b><%= wine.description %><br/>
       </p>
       <p><%= link_to 'View details', wine , class: "btn btn-default btn-sm"%>
-        <%= link_to 'Edit', edit_wine_path(wine), class: "btn btn-default btn-sm"%>
+        <%#= link_to 'Edit', edit_wine_path(wine), class: "btn btn-default btn-sm"%>
       </p>
     </div>
 
-    <% if i%4 == 0 && i != 0%>
+    <% if i%4 == 0 && i != 1%>
       </div>
     <% end %>
     <% i += 1 %>
