@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209191652) do
+ActiveRecord::Schema.define(version: 20131211232249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: true do |t|
     t.string   "name"
-    t.string   "description"
-    t.string   "photo_url"
-    t.integer  "rating"
-    t.string   "news"
+    t.string   "category"
+    t.string   "sweetness"
+    t.string   "body"
+    t.string   "acidity"
+    t.string   "pairings"
+    t.string   "red"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +47,17 @@ ActiveRecord::Schema.define(version: 20131209191652) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+
+  create_table "surveys", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "Q1"
+    t.integer  "Q2"
+    t.integer  "Q3"
+    t.integer  "Q4"
+    t.integer  "Q5"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

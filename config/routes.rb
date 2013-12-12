@@ -1,4 +1,8 @@
 OneGlassIsNotEnough::Application.routes.draw do
+  resources :brands
+
+  resources :surveys
+
   get "brands/new"
   resources :wines
   resources :users do
@@ -33,7 +37,9 @@ OneGlassIsNotEnough::Application.routes.draw do
   get "/terms" => 'page#terms'
   get "/about" => 'page#about'
   get "/resources" => 'page#resources'
-  get "/survey" => 'page#survey'
+  get "/survey" => 'surveys#index'
+
+  
   get "/survey1" => 'page#survey1'
   get "/survey2" => 'page#survey2'
   get "/survey3" => 'page#survey3'
