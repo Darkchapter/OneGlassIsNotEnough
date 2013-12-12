@@ -1,7 +1,13 @@
-<h2>Wine selection</h2><div class="row" style="float:right;"><%= link_to 'Create new wine', new_wine_path, class: "btn btn-default btn-sm" %></div>
+<h2>Wine selection</h2><div class="row" style="float:right;">
+<!--<%= link_to 'Create new wine', new_wine_path, class: "btn btn-default btn-sm" %></div>-->
 <hr>
 <div class="marketing">
+  <% i = 0 %>
   <% @wines.each do |wine| %>
+    <% if i%4 == 0 %>
+      <div class = "row">
+    <% end %>
+
     <div class="col-md-3" style="padding-top: 30px;">
       <img class="img-circle" src=<%= wine.photo_url %> style="height:140px; width: 140px;" alt="Generic placeholder image">
       <h3><%= wine.name %></h3>
@@ -12,5 +18,10 @@
         <%= link_to 'Edit', edit_wine_path(wine), class: "btn btn-default btn-sm"%>
       </p>
     </div>
+
+    <% if i%4 == 0 %>
+      </div>
+    <% end %>
+    <% i += 1 %>
   <% end %>
 </div>

@@ -8,8 +8,10 @@
     </section>
   </aside>
  <div class="span8">
-  <%= render 'follow_form' if signed_in? %>
-    <a href ="/post" class ="btn btn-primary">Create Micropost</a>
+    <%= render 'follow_form' if signed_in? %>
+    <% if params[:id].to_i == current_user.id %>
+      <a href ="/post" class ="btn btn-primary" style= "width:150px;">Create Micropost</a>
+    <% end %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
